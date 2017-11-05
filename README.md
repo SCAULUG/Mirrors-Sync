@@ -1,2 +1,2 @@
-# Mirrors-Sync
-Build docker image with mirrors synchronization scripts.
+# mirrors_rsync
+This repository contains Dockerfile for building a docker image which uses to timing rsync some linux source and pypi. 

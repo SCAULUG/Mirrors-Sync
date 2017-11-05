@@ -1,0 +1,2 @@
+1 1 * * * bash /Mirrors-Scripts/scripts/start-rsync.sh
+1 6 * * * bandersnatch mirror > /var/log/pypi.log 2>&1
