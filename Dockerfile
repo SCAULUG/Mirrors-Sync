@@ -12,16 +12,13 @@ FROM alpine:latest
 
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && \
-	apk update && apk add --no-cache ca-certificates dcron bash rsync python3 tzdata&& \
+	apk update && apk add --no-cache ca-certificates dcron bash rsync tzdata&& \
 	rm -rf /var/cache/apk/* && \
         ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
         echo "Asia/Shanghai" > /etc/timezone && \
-	pip3 install -r https://bitbucket.org/pypa/bandersnatch/raw/stable/requirements.txt && \
-	touch /var/log/pypi.log  && \
 	mkdir /mirrors
 
 COPY --from=builder /Mirrors-Scripts /Mirrors-Scripts
 COPY ./rsync-cron /etc/crontabs/root
-COPY ./default.conf /etc/bandersnatch.conf
 
-CMD crond && tail -f /var/log/pypi.log
+CMD crond
