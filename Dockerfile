@@ -21,4 +21,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
 COPY --from=builder /Mirrors-Scripts /Mirrors-Scripts
 COPY ./rsync-cron /etc/crontabs/root
 
-CMD crond
+CMD crond && tail -f /Mirrors-Scripts/README.md
