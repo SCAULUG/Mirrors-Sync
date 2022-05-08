@@ -1,0 +1,29 @@
+{
+  "extension": "D",
+  "endpoints": [
+    {
+      "label": "scau",
+      "public": true,
+      "resolve": "mirrors.scau.edu.cn",
+      "filter": [
+        "V4",
+        "SSL"
+      ],
+      "range": [
+        "AS4538"
+      ]
+    }
+  ],
+  "site": {
+    "url": "https://mirrors.scau.edu.cn",
+    "abbr": "SCAU",
+    "name": "华南农业大学开源镜像源",
+    "issue": "https://github.com/SCAULUG/contributors/issues",
+    "request": "https://github.com/SCAULUG/contributors/issues",
+    "email": "mirrors at scau edu cn",
+    "group": "QQ Group: 135 916 828",
+    "logo": "https://mirrors.scau.edu.cn/images/scaulug-logo.jpg"
+  },
+  "mirrors": [],
+  "info": []
+}
