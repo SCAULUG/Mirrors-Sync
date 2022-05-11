@@ -22,4 +22,6 @@ COPY --from=builder /Mirrors-Scripts /Mirrors-Scripts
 COPY ./rsync-cron /etc/crontabs/root
 COPY ./mirrorz.d.json /mirrorz.d.json
 
-CMD crond && mv -f /mirrorz.d.json /mirrors/mirrorz.d.json && tail -f /Mirrors-Scripts/README.md
+CMD crond && \
+	if [ ! -e /mirrors/mirrorz.d.json ]; then mv /mirrorz.d.json /mirrors/mirrorz.d.json; fi && \
+	tail -f /Mirrors-Scripts/README.md
